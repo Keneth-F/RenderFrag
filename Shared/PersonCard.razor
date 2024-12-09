@@ -1,0 +1,18 @@
+﻿@using RenderFrag.Data
+
+<div class="card m-2">
+  <div class="card-header p-2">
+      @Id: @Name @Lastname
+      </div>
+  </div>
+
+@code {
+    [Parameter]
+    public string? Id { get; set; }
+    [Parameter]
+    public string? Name { get; set; }
+    [Parameter]
+    public string? Lastname { get; set; }
+    [Parameter]
+    public RenderFragment Child { get; set; }
+}

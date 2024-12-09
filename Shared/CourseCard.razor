@@ -1,0 +1,11 @@
+﻿@using RenderFrag.Data
+
+  <div class="card-body d-flex gap-3">
+    <h5 class="card-title">Code Course: @Course.Id</h5>
+    <p class="card-text">Name Course: @Course.Name</p>
+    <p class="card-text">Description Course: @Course.Description</p>
+  </div>
+@code {
+    [Parameter]
+    public Course Course { get; set; }
+}

@@ -1,0 +1,57 @@
+﻿@page "/course-person"
+@using RenderFrag.Data
+@foreach (var person in Persons)
+{
+    <PersonCard Id="@person.Id" Name="@person.Name" Lastname="@person.Lastname">
+        <Child>
+            @foreach (var course in person.Courses)
+            {
+                <CourseCard Course="@course"/>      
+            }
+        </Child>
+    </PersonCard>
+}
+
+@code {
+    public List<Person> Persons { get; set; } = new List<Person>
+    {
+        new Person{
+            Id = "208090976",
+            Name = "K",
+            Lastname = "F",
+            Courses = new List<Course>{
+                new Course
+                {
+                    Id="INAUDS24",
+                    Name="DS",
+                    Description="XD"
+                },
+                new Course
+                {
+                    Id="INAUII24",
+                    Name="II",
+                    Description="IB->II"
+                }
+            }
+        },
+        new Person{
+            Id = "208090977",
+            Name = "J",
+            Lastname = "G",
+            Courses = new List<Course>{
+                new Course
+                {
+                    Id="INAUII24",
+                    Name="IA",
+                    Description="IB->II->IA"
+                }
+            }
+        },
+         new Person{
+            Id = "208090978",
+            Name = "A",
+            Lastname = "P",
+            Courses = new List<Course>()
+        }
+    };
+}
